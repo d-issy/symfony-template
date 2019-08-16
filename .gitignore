@@ -1,3 +1,4 @@
+composer.phar
 
 ###> symfony/framework-bundle ###
 /.env.local
@@ -8,4 +9,6 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
-composer.phar
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
