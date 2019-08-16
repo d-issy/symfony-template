@@ -1,4 +1,6 @@
 {
+    "name": "symfony-template",
+    "description": "",
     "type": "project",
     "license": "proprietary",
     "require": {
