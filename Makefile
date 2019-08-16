@@ -6,3 +6,5 @@ composer.phar:
 	php -r "unlink('composer-setup.php');"
 
 composer/setup: bin/composer
+composer/install: composer/setup
+	php composer.phar install
