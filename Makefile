@@ -1,3 +1,10 @@
+.DEFAULT_GOAL: help
+help:
+	@echo Plase check readme
+
+.PHONY: setup
+setup: composer/setup docker/build
+
 .PHONY: composer/*
 composer.phar:
 	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -8,3 +15,7 @@ composer.phar:
 composer/setup: bin/composer
 composer/install: composer/setup
 	php composer.phar install
+
+.PHONY: docker/*
+docker/build:
+	docker-compose build
