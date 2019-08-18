@@ -1,6 +1,9 @@
 {
     "devDependencies": {
+        "@babel/preset-react": "^7.0.0",
         "@symfony/webpack-encore": "^0.28.0",
+        "@types/react": "^16.9.2",
+        "@types/react-dom": "^16.8.5",
         "core-js": "^3.0.0",
         "node-sass": "^4.12.0",
         "regenerator-runtime": "^0.13.2",
@@ -14,5 +17,9 @@
     "scripts": {
         "dev-server": "encore dev-server --host 0.0.0.0 --port 8080",
         "build": "encore production --progress"
+    },
+    "dependencies": {
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0"
     }
 }
