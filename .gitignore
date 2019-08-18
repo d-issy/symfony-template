@@ -8,3 +8,10 @@ composer.phar
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/dist/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###

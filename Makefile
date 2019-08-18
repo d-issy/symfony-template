@@ -4,6 +4,8 @@ help:
 
 .PHONY: setup
 setup: composer/setup docker/build
+	docker-compose run --rm node npm install
+	docker-compose run --rm app php composer.phar install
 
 .PHONY: composer/*
 composer.phar:
@@ -19,3 +21,8 @@ composer/install: composer/setup
 .PHONY: docker/*
 docker/build:
 	docker-compose build
+
+.PHONY: devserver/*
+devserver/restart:
+	docker-compose kill node
+	docker-compose up -d
