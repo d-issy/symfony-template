@@ -2,10 +2,21 @@
 help:
 	@echo Plase check readme
 
-.PHONY: setup
+.PHONY: setup start stop clean
 setup: composer/setup docker/build
 	docker-compose run --rm node npm install
 	docker-compose run --rm app php composer.phar install
+
+start:
+	docker-compose up -d
+
+stop:
+	docker-compose stop
+
+clean:
+	docker-compose down -d
+	rm node_modules
+	rm vendor
 
 .PHONY: composer/*
 composer.phar:
