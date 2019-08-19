@@ -18,8 +18,8 @@ stop:
 
 clean:
 	docker-compose down -v
-	rm node_modules
-	rm vendor
+	rm -rf node_modules
+	rm -rf vendor
 
 .PHONY: composer/*
 composer.phar:
@@ -28,7 +28,7 @@ composer.phar:
 	php composer-setup.php
 	php -r "unlink('composer-setup.php');"
 
-composer/setup: bin/composer
+composer/setup: composer.phar
 composer/install: composer/setup
 	php composer.phar install
 
