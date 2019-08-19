@@ -17,7 +17,7 @@ stop:
 	docker-compose stop
 
 clean:
-	docker-compose down -d
+	docker-compose down -v
 	rm node_modules
 	rm vendor
 
