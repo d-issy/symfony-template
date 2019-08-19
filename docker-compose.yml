@@ -3,8 +3,11 @@ services:
     db:
         image: mysql:5.7
         restart: always
-        env_file:
-            - .env
+        environment:
+            MYSQL_DATABASE: dev
+            MYSQL_USER: db_user
+            MYSQL_PASSWORD: password
+            MYSQL_ROOT_PASSWORD: password
         volumes:
             - db_data:/var/lib/mysql
     app:
@@ -12,8 +15,6 @@ services:
         restart: always
         depends_on:
             - db
-        env_file:
-            - .env
         volumes:
             - .:/app:cached
     nginx:
