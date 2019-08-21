@@ -40,3 +40,10 @@ docker/build:
 devserver/restart:
 	docker-compose kill node
 	docker-compose up -d
+
+.PHONY: app/*
+app/shell:
+	docker-compose exec app ash
+app/log:
+	docker-compose logs -f
+
