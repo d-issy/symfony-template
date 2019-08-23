@@ -32,8 +32,6 @@ composer.phar:
 	php -r "unlink('composer-setup.php');"
 
 composer/setup: composer.phar
-composer/install: composer/setup
-	php composer.phar install
 
 .PHONY: docker/*
 docker/build:
@@ -49,4 +47,3 @@ app/shell:
 	docker-compose exec app ash
 app/log:
 	docker-compose logs -f
-
