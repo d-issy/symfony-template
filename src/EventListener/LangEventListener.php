@@ -9,7 +9,7 @@
 namespace App\EventListener;
 
 
-use App\Service\LangManager;
+use App\Service\Translator;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 class LangEventListener
@@ -17,7 +17,7 @@ class LangEventListener
     public function onKernelRequest(GetResponseEvent $event)
     {
         $request = $event->getRequest();
-        $langManager = new LangManager($request);
-        $request->attributes->set('lang_manager', $langManager);
+        $translator = new Translator($request);
+        $request->attributes->set('translator', $translator);
     }
 }

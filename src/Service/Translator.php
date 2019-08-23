@@ -5,7 +5,7 @@ namespace App\Service;
 
 use Symfony\Component\HttpFoundation\Request;
 
-class LangManager
+class Translator
 {
     const LANG_EN = 'en';
     const LANG_JA = 'ja';
@@ -44,6 +44,32 @@ class LangManager
     public function setLang(string $lang)
     {
         $this->lang = $lang;
+    }
+
+    private function getJA()
+    {
+        return [];
+    }
+
+    private function getEN()
+    {
+        return [];
+    }
+
+    private function getOrElse($d, $k, $n)
+    {
+        return isset($d[$k]) ? $d[$k] : $n;
+    }
+
+    public function trans($name)
+    {
+        switch ($this->lang) {
+            case self::LANG_EN:
+                return $this->getOrElse($this->getEN(), $name, $name);
+            case self::LANG_JA:
+                return $this->getOrElse($this->getJA(), $name, $name);
+        }
+        return $name;
     }
 
     /**
