@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: shepabashi
- * Date: 2019-08-24
- * Time: 00:36
- */
 
 namespace App\EventListener;
 
