@@ -27,7 +27,7 @@ class LangManager
             $this->lang = $lang;
             return;
         }
-        $this->lang = self::getLanguage($request->getLanguages());
+        $this->lang = self::parse($request->getLanguages());
     }
 
     /**
@@ -50,7 +50,7 @@ class LangManager
      * @param string[] $languages
      * @return string
      */
-    private static function getLanguage(array $languages)
+    private static function parse(array $languages)
     {
         if (count($languages) === 0) {
             return self::LANG_DEFAULT;
