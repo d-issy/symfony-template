@@ -16,6 +16,9 @@ start/background:
 stop:
 	docker-compose stop
 
+down:
+	docker-compose down
+
 clean:
 	docker-compose down -v
 	rm -rf node_modules
